@@ -1,0 +1,36 @@
+table, th, td {
+  
+    border: 1px solid black;
+    font-size: 15px;
+  }
+#reportTable{
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin: auto;
+  }
+#reportTableH1{
+  
+}
+#reportTableH2{
+ 
+}
+#tr2{
+  font-style: italic;
+
+}
+#tc2{
+  text-align: right;
+  
+  /* padding: 5px; */
+}
+#tc3{
+  /* padding: 5px; */
+  font-weight: bold;
+  text-align: right;
+  text-decoration: underline;
+}
+#dipart {
+  border: 1px solid red;
+  border-style: dashed;
+  margin-left: 10px;
+}
