@@ -284,6 +284,7 @@
                     $totalCustomer+=$subtotal;
                     echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                 }
+            }
         }
         echo "<tr><th colspan=\"4\">Grand Total for customer</th><th  id=\"tc3\">". sprintf("%.2f",$totalCustomer) ."</th></tr>";
         ?>
