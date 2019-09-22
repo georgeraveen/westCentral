@@ -76,175 +76,209 @@
                 
                              
                 foreach($cust->result() as $row){
-                //hemas  
+                    //hemas
+                
                     if($row->hID!=''){
-                        $cust2 = $this->db->query("select hID,custName,town from hemas where hID='$row->hID'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Hemas) - ".$row2->hID."--".$row2->custName."--".$row2->town."</th></tr>";
-                        }
-                        echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from hemasoutupload where hID='$row->hID'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-str=\"0.00\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-str=\"0.00\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
-                    }
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from hemasoutupload where hID = \"$row->hID\" and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select hID,custName,town from hemas where hID='$row->hID'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Hemas) - ".$row2->hID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            
+                            foreach($cust3->result() as $row3){
 
-                //cipla
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-enum=\"2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                        }
+                    }
+                
+                    //cipla
+                
                     if($row->cpID!=''){
-                        $cust2 = $this->db->query("select cID,custName,town from cipla where cID='$row->cpID'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Cipla) - ".$row2->cID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from ciplaoutupload where cID='$row->cpID'and age>=$ageOut order by date");
+                            
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select cID,custName,town from cipla where cID='$row->cpID'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Cipla) - ".$row2->cID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from ciplaoutupload where cID='$row->cpID'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
                 
-                //gs
+                    //gs
+                
                     if($row->gsID!=''){
-                        $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID'and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
                 
-                //jlm
+                    //jlm
+                
                     if($row->jID!=''){
-                        $cust2 = $this->db->query("select jID,custName,town from jlm where jID='$row->jID'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(J.L.Morison) - ".$row2->jID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from jloutupload where jID='$row->jID'and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select jID,custName,town from jlm where jID='$row->jID'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(J.L.Morison) - ".$row2->jID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from jloutupload where jID='$row->jID'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
+                    //sanofi
                 
-                //sanofi
                     if($row->sID!=''){
-                        $cust2 = $this->db->query("select sID,custName,town from sanofi where sID=\"$row->sID\"");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Sanofi) - ".$row2->sID."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from sanoutupload where sID=\"$row->sID\"and age>=$ageOut order by date");              
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select sID,custName,town from sanofi where sID=\"$row->sID\"");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Sanofi) - ".$row2->sID."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">"/* . sprintf("%.2f",$row3->amount) */."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from sanoutupload where sID=\"$row->sID\"and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
-
-                //hemas2  
+                    //hemas2
+                    
                     if($row->hID2!=''){
-                        $cust2 = $this->db->query("select hID,custName,town from hemas where hID='$row->hID2'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Hemas) - ".$row2->hID."--".$row2->custName."--".$row2->town."</th></tr>";
-                        }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from hemasoutupload where hID='$row->hID2'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-str=\"0.00\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-str=\"0.00\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
-                    }
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from hemasoutupload where hID = \"$row->hID2\" and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select hID,custName,town from hemas where hID='$row->hID2'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Hemas) - ".$row2->hID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            
+                            foreach($cust3->result() as $row3){
 
-                //cipla2
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\" data-cell-type=\"number\" data-cell-format-enum=\"2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                        }
+                    }
+                
+                    //cipla2
+                
                     if($row->cpID2!=''){
-                        $cust2 = $this->db->query("select cID,custName,town from cipla where cID='$row->cpID2'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Cipla) - ".$row2->cID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from ciplaoutupload where cID='$row->cpID2'and age>=$ageOut order by date");
+                            
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select cID,custName,town from cipla where cID='$row->cpID2'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Cipla) - ".$row2->cID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from ciplaoutupload where cID='$row->cpID2'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
                 
-                //gs2
+                    //gs2
+                
                     if($row->gsID2!=''){
-                        $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID2'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID2'and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID2'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID2'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
                 
-                //jlm2
+                    //jlm2
+                
                     if($row->jID2!=''){
-                        $cust2 = $this->db->query("select jID,custName,town from jlm where jID='$row->jID2'");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(J.L.Morison) - ".$row2->jID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from jloutupload where jID='$row->jID2'and age>=$ageOut order by date");
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select jID,custName,town from jlm where jID='$row->jID2'");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(J.L.Morison) - ".$row2->jID."--".$row2->custName."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">". sprintf("%.2f",$row3->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from jloutupload where jID='$row->jID2'and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
+                    }
+                    //sanofi2
+                
+                    if($row->sID2!=''){
+                        $cust3 = $this->db->query("select inv,date,age,amount,balAmount from sanoutupload where sID=\"$row->sID2\"and age>=$ageOut order by date");              
+                        if($cust3->result()){
+                            $cust2 = $this->db->query("select sID,custName,town from sanofi where sID=\"$row->sID2\"");
+                            foreach($cust2->result() as $row2){
+                                echo "<tr><th id=\"tr2\" colspan = \"5\">(Sanofi) - ".$row2->sID."--".$row2->town."</th></tr>";
+                            }
+                            //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
+                            $subtotal=0;
+                            foreach($cust3->result() as $row3){
+                                echo "<tr><td>".$row3->inv."</td><td>".$row3->date."</td><td>".$row3->age."</td><td id=\"tc2\">"/* . sprintf("%.2f",$row3->amount) */."</td><td id=\"tc2\">". sprintf("%.2f",$row3->balAmount)."</td></tr>";
+                                $subtotal+=$row3->balAmount;
+                            }
+                            $totalCustomer+=$subtotal;
+                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                     }
 
-                //sanofi2
-                    if($row->sID2!=''){
-                        $cust2 = $this->db->query("select sID,custName,town from sanofi where sID=\"$row->sID2\"");
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><th id=\"tr2\" colspan = \"5\">(Sanofi) - ".$row2->sID."--".$row2->town."</th></tr>";
-                        }
-                        //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
-                        $cust2 = $this->db->query("select inv,date,age,amount,balAmount from sanoutupload where sID=\"$row->sID2\"and age>=$ageOut order by date");
-                        $subtotal=0;
-                        foreach($cust2->result() as $row2){
-                            echo "<tr><td>".$row2->inv."</td><td>".$row2->date."</td><td>".$row2->age."</td><td id=\"tc2\">". sprintf("%.2f",$row2->amount)."</td><td id=\"tc2\">". sprintf("%.2f",$row2->balAmount)."</td></tr>";
-                            $subtotal+=$row2->balAmount;
-                        }
-                        $totalCustomer+=$subtotal;
-                        echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
-                    }
                 }
                 $totalreport+=$totalCustomer;
                 echo "<tr><th colspan=\"4\">Grand Total for customer</th><th  id=\"tc3\">". sprintf("%.2f",$totalCustomer) ."</th></tr>";
