@@ -1,3 +1,11 @@
+	with zero subtotal customers except for hemas
+	created as a backup
+	emerchemie not added
+	extended version (without zero subtotal) is "remove-outstand" branch
+	
+
+
+
 
 
 
