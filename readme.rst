@@ -1,5 +1,7 @@
 
-
+removed zero subtotal customers in this branch
+and merged with master on 2019/9/26
+branch edit is now closed
 
 
 
