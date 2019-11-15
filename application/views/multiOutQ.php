@@ -282,7 +282,7 @@
                 }
                 $totalreport+=$totalCustomer;
                 echo "<tr><th colspan=\"4\">Grand Total for customer</th><th  id=\"tc3\">". sprintf("%.2f",$totalCustomer) ."</th></tr>";
-                echo "<tr><td colspan =\"5\">  </td></tr>";
+                // echo "<tr><td colspan =\"5\">  </td></tr>";
             }
              
             echo "<tr><th colspan=\"4\">Grand Total for report</th><th  id=\"tc3\">". sprintf("%.2f",$totalreport) ."</th></tr><tr></tr>";
