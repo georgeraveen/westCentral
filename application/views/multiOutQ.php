@@ -94,7 +94,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -115,7 +115,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -135,7 +135,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -155,7 +155,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                     //sanofi
@@ -174,7 +174,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                     //hemas2
@@ -195,7 +195,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -216,7 +216,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -236,7 +236,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                 
@@ -256,7 +256,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
                     //sanofi2
@@ -275,7 +275,7 @@
                                 $subtotal+=$row3->balAmount;
                             }
                             $totalCustomer+=$subtotal;
-                            echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
+                            // echo "<tr><th colspan = \"4\">SubTotal</th><th id=\"tc2\">". sprintf("%.2f",$subtotal)."</th></tr>";
                         }
                     }
 
