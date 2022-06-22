@@ -7,7 +7,7 @@
 		
     </head>
     <body>
-    <div class="header">
+    <div  class="container">
         <h1>welcome</h1>
         <h2>customer outstanding report Upload</h2>
         upload Data

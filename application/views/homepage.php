@@ -7,88 +7,86 @@
 		
     </head>
     <body>
-    <div class="header">
-        <h1>welcome</h1>
-        <h2>customer outstanding report</h2>
-        hello
+    <div class="container">
+        <h1>Welcome</h1>
+        <h2>Customer outstanding report</h2>
     <div>
-        functions
 
         <div>
-		    <div>
-		    <div>
+		    <div class="container">
+				<div class="row" >
+									
 								
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/nurse.jpg"> -->
+						</div>
+						<div>
+							<h3>Upload data</h3>
+							<div class="button"><span><a href="./uploadDataPage"target="_blank">Click Here</a></span></div>
+						</div>
+					</div>	
+
+					<br>
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/admin.png"> -->
+						</div>
+						<div>
+							<h3>View outstanding</h3>
+							<div class="button"><span><a href="./viewOutstandPage" target="_blank" >Click Here</a></span></div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<br><br>
+					
+					<br><br>
+					<div id="dipart">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<h3>register new customer</h3>
 							
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/nurse.jpg"> -->
+							<div class="button"><span><a href="./regCustPage" target="_blank" >Click Here</a></span></div>
+						</div>
 					</div>
-					<div>
-						  <h3>upload data</h3>
-						  
-						  <div class="button"><span><a href="./uploadDataPage"target="_blank">Click Here</a></span></div>
-				    </div>
-				</div>	
+					<br>
+					<div id="dipart">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<h3>modify exiting customer</h3>
+							
+							<div class="button"><span><a href="./modCustomer" target="_blank" >Click Here</a></span></div>
+						</div>
+					</div>
+					<br>
+					<div id="dipart">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<h3>DELETE a customer</h3>
+							
+							<div class="button"><span><a href="./delCustPage" target="_blank" >Click Here</a></span></div>
+						</div>
+					</div>
+					<br>
+					<div id="dipart">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<h3>Details of customers</h3>
+							
+							<div class="button"><span><a href="./CustPage" target="_blank" >Click Here</a></span></div>
+						</div>
+					</div>
 
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/admin.png"> -->
-					</div>
-					<div>
-						  <h3>view outstanding</h3>
-						
-						  <div class="button"><span><a href="./viewOutstandPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br><br>
-				==============================================================================================================================
-				<br><br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>register new customer</h3>
-						
-						  <div class="button"><span><a href="./regCustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>modify exiting customer</h3>
-						
-						  <div class="button"><span><a href="./modCustomer" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>DELETE a customer</h3>
-						
-						  <div class="button"><span><a href="./delCustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>Details of customers</h3>
-						
-						  <div class="button"><span><a href="./CustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-
-            </div>
+            	</div>
             </div>
         </div>
             
