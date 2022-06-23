@@ -47,16 +47,12 @@
         $ageOut = $_POST["age"];
     ?>
     <body>
-    <div class="header">
-        <h1>welcome</h1>
-        <h2>customer outstanding report</h2>
+    <div class="container mt-5">
+        <h2 class="mt-5">Multi customer outstanding report</h2>
         
-    <div>
-    multi customer wise
-    <br>
-
-    <button onclick="exportTableToExcel('reportTable')">Export Table Data To Excel File</button>
     
+	    <button  class="btn btn-info" onclick="exportTableToExcel('reportTable')">Download Data To Excel File</button>
+    <div>
 
     <br>
     <div id="reportTableclass">
