@@ -42,6 +42,16 @@ if($sid=="\"\""){$sid='NULL';}
 $c=$this->db->query("update customer set town='$twn', hID=$hid,gsID=$gid,cpID=$cid,jID=$jid,sID=$sid,hID2=$hid2,gsID2=$gid2,cpID2=$cid2,jID2=$jid2,sID2=$sid2 where Custid=$idn");
 ?>
 
+			<div class="alert alert-success" role="alert">
+				Customer update successful!
+			</div>
+	<div>
+		<a href="./../modCustomer">
+		<button class="btn btn-info mx-5"  type="button">
+			<< Go Back
+		</button>
+		</a>
+	</div>
 
 </body>
 </html>

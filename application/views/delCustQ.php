@@ -23,6 +23,16 @@ $cust= $this->db->query("delete from customer where Custid = $ID");
 
 
 ?>
-customer delete complete
+
+	<div class="alert alert-success" role="alert">
+		Customer delete successful!
+	</div>
+	<div>
+		<a href="./../delCustPage">
+		<button class="btn btn-info mx-5"  type="button">
+			<< Go Back
+		</button>
+		</a>
+	</div>			
 </body>
 </html>

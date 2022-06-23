@@ -7,12 +7,12 @@
 		
     </head>
     <body>
-    <div class="header">
-        <h1>welcome</h1>
-        <h2>Modify a customer</h2>
-        hello
+	<div class="container">
+        <h1  class="mt-5" >Welcome</h1>
+        <h2>Customer Outstanding Management System </h2>
+		<h2>Modify Customer Details</h2>
     <div>
-        select a customer below to modify
+        Select a customer below to modify
 
         <div>
         <form action = "./modCustomer/modCustP"  method="post">
@@ -32,12 +32,13 @@
         </div>
 
 
-        <div>
-            <table  id="reportTable1">
+        <div class="mt-4">
+            <table class="table" id="reportTable1">
             <?php
                 $vcust = $this->db->query("select * from customer order by custName");
+				echo '<thead class="thead-dark">';
                 echo "<tr><strong><th>Customer ID</th><th>Name</th><th>Town</th><th>hemas</th><th>cipla</th><th>GS</th><th>JLM</th><th>Sanofi</th><th>hemas-2</th><th>cipla-2</th><th>GS-2</th><th>JLM-2</th><th>Sanofi-2</th></strong></tr>"; 
-                    
+                    echo '</thead>';
                 foreach($vcust->result() as $row1){
                     //echo "";
                     //foreach ($cust->result() as $row){

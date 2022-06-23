@@ -190,11 +190,23 @@ switch($mid){
     //
     
     $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,cpID,jID,sID,hID2,gsID2,cpID2,jID2,sID2) values('$custNm','$town2','$ty',$hid,$gid,$cid,$jid,$sid,$hid2,$gid2,$cid2,$jid2,$sid2)");
-    echo $custNm.$town2.$ty.$hid.$cid.$gid.$jid.$sid.$hid2.$cid2.$gid2.$jid2.$sid2;
+	echo '
+			<div class="alert alert-success" role="alert">
+				Customer registration successful!
+			</div>
+				';
+	
+	echo $custNm.$town2.$ty.$hid.$cid.$gid.$jid.$sid.$hid2.$cid2.$gid2.$jid2.$sid2;
 
 
 ?><br>
-
+<div>
+		<a href="./../regCustPage">
+		<button class="btn btn-info mx-5"  type="button">
+			<< Go Back
+		</button>
+		</a>
+	</div>
 
 </body>
 </html>
