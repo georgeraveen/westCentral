@@ -12,11 +12,13 @@
                 $("#gBlock").hide();
                 $("#jBlock").hide();
                 $("#sBlock").hide();
+				$("#eBlock").hide();
                 $("#hBlock2").hide();
                 $("#cBlock2").hide();
                 $("#gBlock2").hide();
                 $("#jBlock2").hide();
                 $("#sBlock2").hide();
+				$("#eBlock2").hide();
                 $("#selectTwn").hide();
                 
                 $("#tshow").click(function(){
@@ -28,11 +30,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#hBlock").toggle();
                    
                 });
@@ -42,11 +46,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#cBlock").toggle();
                 });
                 $("#gshow").click(function(){
@@ -55,11 +61,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#gBlock").toggle();
                 });
                 $("#jshow").click(function(){
@@ -68,11 +76,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#jBlock").toggle();
                 });
                 $("#sshow").click(function(){
@@ -81,24 +91,43 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#sBlock").toggle();
                 });
+				$("#eshow").click(function(){
+					$("#hBlock").hide();
+					$("#cBlock").hide();
+					$("#gBlock").hide();
+					$("#jBlock").hide();
+					$("#sBlock").hide();
+					$("#eBlock").hide();
+					$("#hBlock2").hide();
+					$("#cBlock2").hide();
+					$("#gBlock2").hide();
+					$("#jBlock2").hide();
+					$("#sBlock2").hide();
+					$("#eBlock2").hide();
+					$("#eBlock").toggle();
+				});
                 $("#hshow2").click(function(){
                     $("#hBlock").hide();
                     $("#cBlock").hide();
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#hBlock2").toggle();
                     
                 });
@@ -108,11 +137,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#cBlock2").toggle();
                 });
                 $("#gshow2").click(function(){
@@ -121,11 +152,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#gBlock2").toggle();
                 });
                 $("#jshow2").click(function(){
@@ -134,11 +167,13 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#jBlock2").toggle();
                 });
                 $("#sshow2").click(function(){
@@ -147,13 +182,30 @@
                     $("#gBlock").hide();
                     $("#jBlock").hide();
                     $("#sBlock").hide();
+					$("#eBlock").hide();
                     $("#hBlock2").hide();
                     $("#cBlock2").hide();
                     $("#gBlock2").hide();
                     $("#jBlock2").hide();
                     $("#sBlock2").hide();
+					$("#eBlock2").hide();
                     $("#sBlock2").toggle();
                 });
+				$("#eshow2").click(function(){
+					$("#hBlock").hide();
+					$("#cBlock").hide();
+					$("#gBlock").hide();
+					$("#jBlock").hide();
+					$("#sBlock").hide();
+					$("#eBlock").hide();
+					$("#hBlock2").hide();
+					$("#cBlock2").hide();
+					$("#gBlock2").hide();
+					$("#jBlock2").hide();
+					$("#sBlock2").hide();
+					$("#eBlock2").hide();
+					$("#eBlock2").toggle();
+				});
                 $("#selectH").change(function(){
                     $selectedCust = $("#selectH option:selected").val();
                     $("#HID").val($selectedCust);
@@ -174,6 +226,10 @@
                     $selectedCust = $("#selectS option:selected").val();
                     $("#SID").val($selectedCust);
                 });
+				$("#selectE").change(function(){
+					$selectedCust = $("#selectE option:selected").val();
+					$("#EID").val($selectedCust);
+				});
                 $("#selectH2").change(function(){
                     $selectedCust = $("#selectH2 option:selected").val();
                     $("#HID2").val($selectedCust);
@@ -194,6 +250,10 @@
                     $selectedCust = $("#selectS2 option:selected").val();
                     $("#SID2").val($selectedCust);
                 });
+				$("#selectE2").change(function(){
+					$selectedCust = $("#selectE2 option:selected").val();
+					$("#EID2").val($selectedCust);
+				});
                 $("#selectTwn").change(function(){
                     $selectedTwn = $("#selectTwn option:selected").val();
                     $("#TWN").val($selectedTwn);
@@ -226,11 +286,12 @@
 						<th>hemas</th><th>cipla</th>
 						<th>GS</th><th>JLM</th>
 						<th>Sanofi</th>
+						<th>Emerchemie</th>
 						</strong></tr>"; 
                 echo '</thead>';    
                 foreach($vcust->result() as $row1){
                         echo "<tr>";
-                        echo "<td><input type=\"text\" id=\"ID\" name=\"idN\" value=\"".($row1->Custid). "\" readonly</td>";
+                        echo "<td><input type=\"text\" id=\"ID\" name=\"idN\" value=\"".($row1->Custid). "\" readonly></td>";
                         echo "<td>".$row1->custName . "</td>";
                         echo "<td><input type=\"text\" id=\"TWN\" name=\"town\" value=\"".($twn=$row1->town). "\" readonly></td>";
                         echo "<td><input type=\"text\" id=\"HID\" name=\"hid\" value=\"'".($hid=$row1->hID) . "'\" readonly></td>";
@@ -238,6 +299,7 @@
                         echo "<td><input type=\"text\" id=\"GSID\" name=\"gsid\" value=\"'".($gid=$row1->gsID) . "'\" readonly></td>";
                         echo "<td><input type=\"text\" id=\"JID\" name=\"jid\" value=\"'".($jid=$row1->jID) . "'\" readonly></td>";
                         echo "<td><input type=\"text\" id=\"SID\" name=\"sid\" value=\"".($sid=$row1->sID) . "\" readonly></td>";//
+						echo "<td><input type=\"text\" id=\"EID\" name=\"eid\" value=\"".($eid=$row1->eID) . "\" readonly></td>";
 						echo "</tr>";
 						echo '
 							<tr>
@@ -248,6 +310,7 @@
 							<td align="center" id="gshow"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							<td align="center" id="jshow"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							<td align="center" id="sshow"><button type="button" class="btn btn-warning w-100">Edit</button></td>
+							<td align="center" id="eshow"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							</tr>
 						';
                         echo "<tr>";
@@ -257,6 +320,7 @@
                         echo "<td><input type=\"text\" id=\"GSID2\" name=\"gsid2\" value=\"'".($gid2=$row1->gsID2) . "'\" readonly></td>";
                         echo "<td><input type=\"text\" id=\"JID2\" name=\"jid2\" value=\"'".($jid2=$row1->jID2) . "'\" readonly></td>";
                         echo "<td><input type=\"text\" id=\"SID2\" name=\"sid2\" value=\"".($sid2=$row1->sID2) . "\" readonly></td>";//
+						echo "<td><input type=\"text\" id=\"EID2\" name=\"eid2\" value=\"".($eid2=$row1->eID2) . "\" readonly></td>";
                         echo "</tr>";
 						echo '
 							<tr>
@@ -266,6 +330,7 @@
 							<td align="center" id="gshow2"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							<td align="center" id="jshow2"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							<td align="center" id="sshow2"><button type="button" class="btn btn-warning w-100">Edit</button></td>
+							<td align="center" id="eshow2"><button type="button" class="btn btn-warning w-100">Edit</button></td>
 							</tr>
 						';
                 }
@@ -433,6 +498,34 @@
                 ?>
                 </table>	
 		    </div>
+			<div id="eBlock" style="float: center" class="container">
+				<select name="ecust" id="selectE">
+					<?php
+						echo "<option value=NULL>select new customer from Emerchemie</option>";
+						echo "<option value=\"NULL\">empty</option>";
+						$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+						foreach ($cust->result() as $row){
+							$cc = $row->eID;
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
+						}
+					?>
+				</select>
+				<table id="reportTable6">
+				<?php
+					  //DISPLAY emerchemie OTHER CUSTOMERS
+					$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+					echo "<strong><th>Name</th><th>Town</th></strong>"; 
+					echo "";
+					foreach ($cust->result() as $row){
+						echo "<tr>";
+						
+						echo "<td>".$row->custName. "</td>";
+						echo "<td>".$row->town. "</td>";
+						echo "</tr>";           
+					}
+				?>
+				</table>
+			</div>
             <div id="hBlock2" style="float: center" class="container">
                 <select name="hcust" id="selectH2">
                     <?php
@@ -575,6 +668,34 @@
                 ?>
                 </table>	
 		    </div>
+			<div id="eBlock2" style="float: center" class="container">
+				<select name="ecust" id="selectE2">
+					<?php
+						echo "<option value=NULL>select new customer from Emerchemie</option>";
+						echo "<option value=\"NULL\">empty</option>";
+						$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+						foreach ($cust->result() as $row){
+							$cc = $row->eID;
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
+						}
+					?>
+				</select>
+				<table id="reportTable6">
+				<?php
+					  //DISPLAY emerchemie OTHER CUSTOMERS
+					$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+					echo "<strong><th>Name</th><th>Town</th></strong>"; 
+					echo "";
+					foreach ($cust->result() as $row){
+						echo "<tr>";
+						
+						echo "<td>".$row->custName. "</td>";
+						echo "<td>".$row->town. "</td>";
+						echo "</tr>";           
+					}
+				?>
+				</table>
+			</div>
     </div>
     </div>
     </body>
