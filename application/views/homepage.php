@@ -7,88 +7,88 @@
 		
     </head>
     <body>
-    <div class="header">
-        <h1>welcome</h1>
-        <h2>customer outstanding report</h2>
-        hello
+    <div class="container">
+        <h1  class="mt-5" >Welcome</h1>
+        <h2>Customer Outstanding Management System </h2>
     <div>
-        functions
 
         <div>
-		    <div>
-		    <div>
-								
-							
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/nurse.jpg"> -->
+		    <div class="container mt-5">
+				<div class="row" >
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/nurse.jpg"> -->
+						</div>
+						<div>
+							<div><span><a href="./uploadDataPage"target="_blank">
+								<button type="button" class="btn btn-primary btn-lg btn-block" >Upload Data</button>
+							</a></span></div>
+						</div>
+					</div>	
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/admin.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./viewOutstandPage" target="_blank" >
+								<button type="button" class="btn btn-success btn-lg btn-block" >View Outstanding</button>
+								</a></span>
+							</div>
+						</div>
 					</div>
-					<div>
-						  <h3>upload data</h3>
-						  
-						  <div class="button"><span><a href="./uploadDataPage"target="_blank">Click Here</a></span></div>
-				    </div>
-				</div>	
+				</div>
+				<hr class="mt-5" >
+				<h3 class="mt-5">Manage Customer Profiles</h3>
+				<div class="row mt-4" >
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./regCustPage" target="_blank" >
+								<button type="button" class="btn btn-success btn-lg btn-block" >Register New Customer</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./modCustomer" target="_blank" >
+								<button type="button" class="btn btn-warning btn-lg btn-block" >Modify Exiting Customer</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3" >
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./delCustPage" target="_blank" >
+								<button type="button" class="btn btn-danger btn-lg btn-block" >Delete a Customer</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./CustPage" target="_blank" >
+								<button type="button" class="btn btn-primary btn-lg btn-block" >Details of a Customer</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
 
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/admin.png"> -->
-					</div>
-					<div>
-						  <h3>view outstanding</h3>
-						
-						  <div class="button"><span><a href="./viewOutstandPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br><br>
-				==============================================================================================================================
-				<br><br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>register new customer</h3>
-						
-						  <div class="button"><span><a href="./regCustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>modify exiting customer</h3>
-						
-						  <div class="button"><span><a href="./modCustomer" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>DELETE a customer</h3>
-						
-						  <div class="button"><span><a href="./delCustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-				<br>
-				<div id="dipart">
-					<div>
-						  <!-- <img src="../upload/images/doctor.png"> -->
-					</div>
-					<div>
-						  <h3>Details of customers</h3>
-						
-						  <div class="button"><span><a href="./CustPage" target="_blank" >Click Here</a></span></div>
-					</div>
-				</div>
-
-            </div>
+            	</div>
             </div>
         </div>
             
