@@ -125,6 +125,17 @@
 								</div>
 								<div class="col">
 								<!-- //emercheme -->
+									<select name="ecust" class="w-100">
+										<?php
+											echo "<option value=NULL>select customer from Emercheme</option>";
+											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											
+											foreach ($cust->result() as $row){
+												$cc = $row->eID;                         
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
+											}
+										?>
+									</select>
 								</div>
 							</div>
 						</div>     
@@ -200,9 +211,17 @@
 								</div>
 								<div class="col">
 									<!-- emercheme -->
-									<!-- <select name="ecust">
-								
-									</select> -->
+									<select name="ecust2" class="w-100">
+										<?php
+											echo "<option value=NULL>select customer from Emercheme</option>";
+											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											
+											foreach ($cust->result() as $row){
+												$cc = $row->eID;                         
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
+											}
+										?>
+									</select>
 								</div>
 							</div>
 						</div>	
@@ -216,11 +235,13 @@
 									<option value="gs">George Stewart</option>
 									<option value="jl">J.L.Morison</option>
 									<option value="san">Sanofi</option>
+									<option value="emchemie">Emerchemie</option>
 									<option value="NULL">------------------------</option>
 									<option value="hemas2">Hemas-2</option>
 									<option value="cipla2">Cipla-2</option>
 									<option value="gs2">George Stewart-2</option>
 									<option value="jl2">J.L.Morison-2</option>
+									<option value="emchemie2">Emerchemie-2</option>
 									<!-- <option value="san2">Sanofi-2</option> -->
 								</select>
 								<select name="ctype" class="mx-3">
@@ -362,6 +383,25 @@
 						?>
 						</table>	
 					</div>
+					<div style="float: left" class="col">			
+						<button onclick="exportTableToExcel('reportTable6')">Export Table Data To Excel File</button>
+						<table id="reportTable6">
+						<?php
+							//DISPLAY emerchemie OTHER CUSTOMERS
+							$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+							echo "<strong><th>Emerchemie Name</th></strong>"; 
+							echo "";
+							foreach ($cust->result() as $row){
+								echo "<tr>";
+								
+								echo "<td>".$row->custName. "</td>";
+								// echo "<td>".$row->town. "</td>";
+								echo "</tr>";           
+							}
+							
+		
+						?>
+						</table>
 				</div>
 			</div>
 				

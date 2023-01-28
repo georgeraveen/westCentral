@@ -49,4 +49,15 @@ class upload_model extends CI_Model{
             throw new Exception("File not found", 1);
         }
     }
+    function upload_em_out(){
+        if (file_exists('./upload/csv/gvOutstadingEmerchemie.csv')) {
+            $this->db->query("delete from emoutupload");
+            return $this->db->query("LOAD DATA LOCAL INFILE 'http://localhost/westCentral/upload/csv/gvOutstadingEmerchemie.csv' INTO TABLE emoutupload FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (@CustName,inv,@date,age,amount,balamount) SET date = STR_TO_DATE(@date,'%m/%d/%Y') , eID=@CustName, eCustName=@CustName");
+        }
+        else{
+            throw new Exception("File not found", 1);
+        }
+        
+    }
 }
+

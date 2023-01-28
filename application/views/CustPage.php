@@ -23,9 +23,11 @@
 									<th  scope="col">Name</th><th scope="col">Town</th>
 									<th scope="col">hemas</th><th scope="col">cipla</th>
 									<th scope="col">GS</th><th scope="col">JLM</th>
-									<th scope="col">Sanofi</th><th scope="col">hemas-2</th>
+									<th scope="col">Sanofi</th><th scope="col">Emerchemie</th>
+									<th scope="col">hemas-2</th>
 									<th scope="col">cipla-2</th><th scope="col">GS-2</th>
 									<th scope="col">JLM-2</th><th scope="col">Sanofi-2</th>
+									<th scope="col">Emerchemie-2</th>
 									</strong></tr>'; 
                 echo '</thead>';
                 foreach($vcust->result() as $row1){
@@ -62,6 +64,7 @@
                         }
 
                         echo "<td>".$row1->sID . "</td>";
+                        echo "<td>".$row1->eID . "</td>";
 
                         $x=$row1->hID2;
                         $a = $this->db->query("select  * from hemas where hID = \"$x\"");
@@ -89,6 +92,7 @@
                         }
                         
                         echo "<td>".$row1->sID2 . "</td>";
+						echo "<td>".$row1->eID2 . "</td>";
                         echo "</tr>";
             
                     //}

@@ -47,7 +47,13 @@
 					</a></span>
 				</div>
 		    </div>
-            
+            <br>
+			<div>
+				<div class="button"><span><a href="./uploadEmOut" target="popup" onclick="window.open('./uploadEmOut','popup','width=600,height=600'); return false;">
+					<button type="button" class="btn btn-secondary btn-lg">Upload Emerchemie Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingemerchemie.csv</span></button>
+					</a></span>
+				</div>
+			</div>
         </div>
         
     </div>

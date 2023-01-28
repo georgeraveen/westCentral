@@ -1,6 +1,6 @@
 
 <?php
-  class uploadData extends CI_Controller {
+class uploadData extends CI_Controller {
 
 	
 	public function index()
@@ -133,4 +133,19 @@
 			';
 		}
 	}
+	public function uploadEmOut(){
+		$this->load->model('upload_model');
+		$uploadS = $this->upload_model->upload_em_out();
+		if ($uploadS){
+			$cust=$this->db->query("select distinct a.eID,a.eCustName,a.eTown from emoutupload a");
+			foreach($cust->result() as $row){
+				$this->db->query("insert ignore into emerchemie values(\"$row->eID\",\"$row->eCustName\",'$row->eTown')");
+			}
+			echo 'Emerchemie  data uploaded';
+		}
+		else{
+			echo 'Emerchemie upload error';
+		}
+	}
+
 }

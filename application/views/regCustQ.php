@@ -8,12 +8,14 @@ $cid = $_POST["ccust"];
 $gid = $_POST["gcust"];
 $jid = $_POST["jcust"];
 $sid = $_POST["scust"];
+$eid = $_POST["ecust"];
 
 $hid2 = $_POST["hcust2"]; 
 $cid2 = $_POST["ccust2"];
 $gid2 = $_POST["gcust2"];
 $jid2 = $_POST["jcust2"];
 $sid2 = $_POST["scust2"];
+$eid2 = $_POST["ecust2"];
 
 $ty=$_POST["ctype"];
 $town2=$_POST["cTown"];
@@ -136,6 +138,14 @@ switch($mid){
         }
         break;
 
+	case "emchemie":
+		$mid = $eid;
+        $custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = \"$eid\"");
+        foreach ($custdetail->result() as $row){
+            $custNm = $row->custName;
+            $custTw = $row->town;
+        }
+        break;
     
     case "hemas2":
         $mid = $hid2;
@@ -179,6 +189,15 @@ switch($mid){
             $custTw = $row->town;
         }
         break;
+
+	case "emchemie2":
+		$mid = $eid2;
+		$custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = \"$eid2\"");
+		foreach ($custdetail->result() as $row){
+			$custNm = $row->custName;
+			$custTw = $row->town;
+		}
+		break;
 }   
     //sanofi doesnt have id number
     if ($sid2!='NULL'){
@@ -187,16 +206,22 @@ switch($mid){
     if ($sid!='NULL'){
         $sid = "\"".$sid."\"";
     }
+	if ($eid2!='NULL'){
+        $eid2 = "\"".$eid2."\"";
+    }
+    if ($eid!='NULL'){
+        $eid = "\"".$eid."\"";
+    }
     //
     
-    $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,cpID,jID,sID,hID2,gsID2,cpID2,jID2,sID2) values('$custNm','$town2','$ty',$hid,$gid,$cid,$jid,$sid,$hid2,$gid2,$cid2,$jid2,$sid2)");
+    $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,cpID,jID,sID,eID,hID2,gsID2,cpID2,jID2,sID2,eID2) values('$custNm','$town2','$ty',$hid,$gid,$cid,$jid,$sid,$eid,$hid2,$gid2,$cid2,$jid2,$sid2,$eid2)");
 	echo '
 			<div class="alert alert-success" role="alert">
 				Customer registration successful!
 			</div>
 				';
 	
-	echo $custNm.$town2.$ty.$hid.$cid.$gid.$jid.$sid.$hid2.$cid2.$gid2.$jid2.$sid2;
+	echo $custNm.$town2.$ty.$hid.$cid.$gid.$jid.$sid.$eid.$hid2.$cid2.$gid2.$jid2.$sid2.$eid2;
 
 
 ?><br>

@@ -67,4 +67,5 @@ $route['uploadCiplaOut'] = 'uploadData/uploadCiplaOut';
 $route['uploadGsOut'] = 'uploadData/uploadGsOut';
 $route['uploadJlmOut'] = 'uploadData/uploadJlmOut';
 $route['uploadSanOut'] = 'uploadData/uploadSanOut';
+$route['uploadEmOut'] = 'uploadData/uploadEmOut';
 //
