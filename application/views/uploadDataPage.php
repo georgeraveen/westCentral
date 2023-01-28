@@ -20,13 +20,13 @@
 				</div>
 		    </div>
             <br>
-            <div>
+            <!-- <div>
                 <div class="button"><span><a href="./uploadCiplaOut" target="popup" onclick="window.open('./uploadCiplaOut','popup','width=600,height=600'); return false;">
 					<button type="button" class="btn btn-secondary btn-lg">Upload Cipla Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingcipla.csv</span></button>
 					</a></span>
 				</div>
 		    </div>
-            <br>
+            <br> -->
             <div>
                 <div class="button"><span><a href="./uploadGsOut" target="popup" onclick="window.open('./uploadGsOut','popup','width=600,height=600'); return false;">
 					<button type="button" class="btn btn-secondary btn-lg">Upload George stewart Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadinggs.csv</span></button>
@@ -41,9 +41,30 @@
 				</div>
 		    </div>
             <br>
-            <div>
+            <!-- <div>
                 <div class="button"><span><a href="./uploadSanOut" target="popup" onclick="window.open('./uploadSanOut','popup','width=600,height=600'); return false;">
 					<button type="button" class="btn btn-secondary btn-lg">Upload Sanofi Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingSanofi.csv</span></button>
+					</a></span>
+				</div>
+		    </div>
+            <br> -->
+			<div>
+                <div class="button"><span><a href="./uploadAbcOut" target="popup" onclick="window.open('./uploadAbcOut','popup','width=600,height=600'); return false;">
+					<button type="button" class="btn btn-secondary btn-lg">Upload ABC Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingABC.csv</span></button>
+					</a></span>
+				</div>
+		    </div>
+            <br>
+			<div>
+                <div class="button"><span><a href="./uploadNeoOut" target="popup" onclick="window.open('./uploadNeoOut','popup','width=600,height=600'); return false;">
+					<button type="button" class="btn btn-secondary btn-lg">Upload NEO Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingNEO.csv</span></button>
+					</a></span>
+				</div>
+		    </div>
+            <br>
+			<div>
+                <div class="button"><span><a href="./uploadBaurOut" target="popup" onclick="window.open('./uploadBaurOut','popup','width=600,height=600'); return false;">
+					<button type="button" class="btn btn-secondary btn-lg">Upload BAUR Outstanding Data <span class="badge badge-light">/upload/csv/gvOutstadingBAUR.csv</span></button>
 					</a></span>
 				</div>
 		    </div>

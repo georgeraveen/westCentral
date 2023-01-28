@@ -133,6 +133,78 @@ class uploadData extends CI_Controller {
 			';
 		}
 	}
+	public function uploadAbcOut(){
+		try{
+			$this->load->model('upload_model');
+			$uploadS = $this->upload_model->upload_abc_out();
+			if ($uploadS){
+				$cust=$this->db->query("select distinct a.aID,a.aCustName,a.aTown from abcoutupload a");
+				foreach($cust->result() as $row){
+					$this->db->query("insert ignore into abc values(\"$row->aID\",\"$row->aCustName\",'$row->aTown')");
+				}
+			echo '
+				<div class="alert alert-success" role="alert">
+					ABC data uploaded
+				</div>
+					';
+			}
+
+		} catch (\Throwable $th) {
+		echo '
+			<div class="alert alert-danger" role="alert">
+				ABC data upload error. Please check the file and try again.
+			</div>
+			';
+		}
+	}
+	public function uploadNeoOut(){
+		try{
+			$this->load->model('upload_model');
+			$uploadS = $this->upload_model->upload_neo_out();
+			if ($uploadS){
+				$cust=$this->db->query("select distinct a.nID,a.nCustName,a.nTown from neooutupload a");
+				foreach($cust->result() as $row){
+					$this->db->query("insert ignore into neo values(\"$row->nID\",\"$row->nCustName\",'$row->nTown')");
+				}
+			echo '
+				<div class="alert alert-success" role="alert">
+					NeoLife data uploaded
+				</div>
+					';
+			}
+
+		} catch (\Throwable $th) {
+		echo '
+			<div class="alert alert-danger" role="alert">
+				NeoLife data upload error. Please check the file and try again.
+			</div>
+			';
+		}
+	}
+	public function uploadBaurOut(){
+		try{
+			$this->load->model('upload_model');
+			$uploadS = $this->upload_model->upload_baur_out();
+			if ($uploadS){
+				$cust=$this->db->query("select distinct a.bID,a.bCustName,a.bTown from bauroutupload a");
+				foreach($cust->result() as $row){
+					$this->db->query("insert ignore into baur values(\"$row->bID\",\"$row->bCustName\",'$row->bTown')");
+				}
+			echo '
+				<div class="alert alert-success" role="alert">
+					Baur data uploaded
+				</div>
+					';
+			}
+
+		} catch (\Throwable $th) {
+		echo '
+			<div class="alert alert-danger" role="alert">
+				Baur data upload error. Please check the file and try again.
+			</div>
+			';
+		}
+	}
 	public function uploadEmOut(){
 		$this->load->model('upload_model');
 		$uploadS = $this->upload_model->upload_em_out();

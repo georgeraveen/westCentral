@@ -21,13 +21,14 @@
 				echo '<thead class="thead-dark">';
                 echo '<tr><strong><th  scope="col">Customer ID</th>
 									<th  scope="col">Name</th><th scope="col">Town</th>
-									<th scope="col">hemas</th><th scope="col">cipla</th>
+									<th scope="col">hemas</th><th scope="col">abc</th>
 									<th scope="col">GS</th><th scope="col">JLM</th>
-									<th scope="col">Sanofi</th><th scope="col">Emerchemie</th>
+									<th scope="col">neo</th><th scope="col">Emerchemie</th>
+									<th scope="col">baur</th>
 									<th scope="col">hemas-2</th>
-									<th scope="col">cipla-2</th><th scope="col">GS-2</th>
-									<th scope="col">JLM-2</th><th scope="col">Sanofi-2</th>
-									<th scope="col">Emerchemie-2</th>
+									<th scope="col">abc-2</th><th scope="col">GS-2</th>
+									<th scope="col">JLM-2</th><th scope="col">neo-2</th>
+									<th scope="col">Emerchemie-2</th><th scope="col">baur-2</th>
 									</strong></tr>'; 
                 echo '</thead>';
                 foreach($vcust->result() as $row1){
@@ -45,8 +46,8 @@
                         }
                         
                         
-                        $x=$row1->cpID;
-                        $a = $this->db->query("select  * from cipla where cID = \"$x\"");
+                        $x=$row1->aID;
+                        $a = $this->db->query("select  * from abc where aID = \"$x\"");
                         foreach($a->result() as $rz){
                             echo "<td>". $rz->custName ."-".$rz->town. "</td>";
                         }
@@ -63,8 +64,14 @@
                             echo "<td>". $rz->custName ."-".$rz->town. "</td>";
                         }
 
-                        echo "<td>".$row1->sID . "</td>";
+                        echo "<td>".$row1->nID . "</td>";
+						
                         echo "<td>".$row1->eID . "</td>";
+						$x=$row1->bID;
+                        $a = $this->db->query("select  * from baur where bID = \"$x\"");
+                        foreach($a->result() as $rz){
+                            echo "<td>". $rz->custName ."-".$rz->town. "</td>";
+                        }
 
                         $x=$row1->hID2;
                         $a = $this->db->query("select  * from hemas where hID = \"$x\"");
@@ -73,8 +80,8 @@
                         }
                         
                         
-                        $x=$row1->cpID2;
-                        $a = $this->db->query("select  * from cipla where cID = \"$x\"");
+                        $x=$row1->aID2;
+                        $a = $this->db->query("select  * from abc where aID = \"$x\"");
                         foreach($a->result() as $rz){
                             echo "<td>". $rz->custName ."-".$rz->town. "</td>";
                         }
@@ -91,8 +98,14 @@
                             echo "<td>". $rz->custName ."-".$rz->town. "</td>";
                         }
                         
-                        echo "<td>".$row1->sID2 . "</td>";
+                        echo "<td>".$row1->nID2 . "</td>";
 						echo "<td>".$row1->eID2 . "</td>";
+						$x=$row1->bID2;
+						$a = $this->db->query("select  * from baur where bID = \"$x\"");
+						foreach($a->result() as $rz){
+							echo "<td>". $rz->custName ."-".$rz->town. "</td>";
+						}
+						
                         echo "</tr>";
             
                     //}
