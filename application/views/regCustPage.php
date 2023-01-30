@@ -63,7 +63,7 @@
 									<select name="hcust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Hemas</option>";
-											$cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
+											$cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->hID;
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
@@ -75,7 +75,7 @@
 									<select name="acust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from ABC</option>";
-											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->aID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
@@ -87,7 +87,7 @@
 									<select name="gcust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from George Stewart</option>";
-											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->gID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
@@ -101,7 +101,7 @@
 									<select name="jcust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from J.L.Morison</option>";
-											$cust = $this->db->query("select distinct a.jID,a.custName,a.town from jlm a Left join customer h on (a.jID = h.jID) left join customer hh on (a.jID = hh.jID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.jID,a.custName,a.town from jlm a Left join customer h on (a.jID = h.jID) left join customer hh on (a.jID = hh.jID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->jID;                         
@@ -114,7 +114,7 @@
 									<select name="ncust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from NEO</option>";
-											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->nID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
@@ -127,7 +127,7 @@
 									<select name="ecust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Emercheme</option>";
-											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->eID;                         
@@ -142,7 +142,7 @@
 									<select name="bcust" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Baurs</option>";
-											$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->bID;                         
@@ -167,7 +167,7 @@
 									<select name="hcust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Hemas</option>";
-											$cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
+											$cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null order by a.custName");
 											//$cust = $this->db->query("select distinct a.hID,a.hCustName,a.hTown from hemasoutupload a");
 											foreach ($cust->result() as $row){
 												$cc = $row->hID;
@@ -180,7 +180,7 @@
 									<select name="acust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from ABC</option>";
-											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->aID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
@@ -192,7 +192,7 @@
 									<select name="gcust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from George Stewart</option>";
-											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->gID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
@@ -206,7 +206,7 @@
 									<select name="jcust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from J.L.Morison</option>";
-											$cust = $this->db->query("select distinct a.jID,a.custName,a.town from jlm a Left join customer h on (a.jID = h.jID) left join customer hh on (a.jID = hh.jID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.jID,a.custName,a.town from jlm a Left join customer h on (a.jID = h.jID) left join customer hh on (a.jID = hh.jID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->jID;                         
@@ -219,7 +219,7 @@
 									<select name="ncust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from NEO</option>";
-											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->nID;                         
 												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
@@ -232,7 +232,7 @@
 									<select name="ecust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Emercheme</option>";
-											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->eID;                         
@@ -247,7 +247,7 @@
 									<select name="bcust2" class="w-100">
 										<?php
 											echo "<option value=NULL>select customer from Baurs</option>";
-											$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
+											$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null  order by a.custName");
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->bID;                         
