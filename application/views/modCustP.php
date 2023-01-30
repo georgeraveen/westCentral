@@ -363,13 +363,13 @@
                         echo "<td><input type=\"text\" id=\"ID\" name=\"idN\" value=\"".($row1->Custid). "\" readonly></td>";
                         echo "<td>".$row1->custName . "</td>";
                         echo "<td><input type=\"text\" id=\"TWN\" name=\"town\" value=\"".($twn=$row1->town). "\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"HID\" name=\"hid\" value=\"'".($hid=$row1->hID) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"AID\" name=\"aid\" value=\"'".($aid=$row1->aID) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"GSID\" name=\"gsid\" value=\"'".($gid=$row1->gsID) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"JID\" name=\"jid\" value=\"'".($jid=$row1->jID) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"NID\" name=\"nid\" value=\"'".($nid=$row1->nID) . "'\" readonly></td>";//
-						echo "<td><input type=\"text\" id=\"EID\" name=\"eid\" value=\"'".($eid=$row1->eID) . "'\" readonly></td>";
-						echo "<td><input type=\"text\" id=\"BID\" name=\"bid\" value=\"'".($bid=$row1->bID) . "'\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"HID\" name=\"hid\" value=\"".($hid=$row1->hID) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"AID\" name=\"aid\" value=\"".($aid=$row1->aID) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"GSID\" name=\"gsid\" value=\"".($gid=$row1->gsID) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"JID\" name=\"jid\" value=\"".($jid=$row1->jID) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"NID\" name=\"nid\" value=\"".($nid=$row1->nID) . "\" readonly></td>";//
+						echo "<td><input type=\"text\" id=\"EID\" name=\"eid\" value=\"".($eid=$row1->eID) . "\" readonly></td>";
+						echo "<td><input type=\"text\" id=\"BID\" name=\"bid\" value=\"".($bid=$row1->bID) . "\" readonly></td>";
 						echo "</tr>";
 						echo '
 							<tr>
@@ -386,13 +386,13 @@
 						';
                         echo "<tr>";
 						echo '<td colspan="3">Duplicate Customer</td>';
-                        echo "<td><input type=\"text\" id=\"HID2\" name=\"hid2\" value=\"'".($hid2=$row1->hID2) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"AID2\" name=\"aid2\" value=\"'".($aid2=$row1->aID2) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"GSID2\" name=\"gsid2\" value=\"'".($gid2=$row1->gsID2) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"JID2\" name=\"jid2\" value=\"'".($jid2=$row1->jID2) . "'\" readonly></td>";
-                        echo "<td><input type=\"text\" id=\"NID2\" name=\"nid2\" value=\"'".($nid2=$row1->nID2) . "'\" readonly></td>";//
-						echo "<td><input type=\"text\" id=\"EID2\" name=\"eid2\" value=\"'".($eid2=$row1->eID2) . "'\" readonly></td>";
-						echo "<td><input type=\"text\" id=\"BID2\" name=\"bid2\" value=\"'".($bid2=$row1->bID2) . "'\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"HID2\" name=\"hid2\" value=\"".($hid2=$row1->hID2) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"AID2\" name=\"aid2\" value=\"".($aid2=$row1->aID2) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"GSID2\" name=\"gsid2\" value=\"".($gid2=$row1->gsID2) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"JID2\" name=\"jid2\" value=\"".($jid2=$row1->jID2) . "\" readonly></td>";
+                        echo "<td><input type=\"text\" id=\"NID2\" name=\"nid2\" value=\"".($nid2=$row1->nID2) . "\" readonly></td>";//
+						echo "<td><input type=\"text\" id=\"EID2\" name=\"eid2\" value=\"".($eid2=$row1->eID2) . "\" readonly></td>";
+						echo "<td><input type=\"text\" id=\"BID2\" name=\"bid2\" value=\"".($bid2=$row1->bID2) . "\" readonly></td>";
                         echo "</tr>";
 						echo '
 							<tr>
@@ -437,7 +437,7 @@
                         $cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->hID;
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select> 
@@ -465,7 +465,7 @@
                         $cust = $this->db->query("select distinct a.aid,a.custName,a.town from abc a Left join customer h on (a.aid = h.aID) left join customer hh on (a.aid = hh.aID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->aid;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName."</option>";
                         }
                     ?>
                 </select>
@@ -493,7 +493,7 @@
                         $cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->gID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select>
@@ -522,7 +522,7 @@
                         
                         foreach ($cust->result() as $row){
                             $cc = $row->jID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select>
@@ -551,7 +551,7 @@
                         
                         foreach ($cust->result() as $row){
                             $cc = $row->nID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
                         }
                     ?>
                 </select>
@@ -579,7 +579,7 @@
 						$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
 						foreach ($cust->result() as $row){
 							$cc = $row->eID;
-							echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 						}
 					?>
 				</select>
@@ -607,7 +607,7 @@
 						$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
 						foreach ($cust->result() as $row){
 							$cc = $row->bID;
-							echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 						}
 					?>
 				</select>
@@ -635,7 +635,7 @@
                         $cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->hID;
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select> 
@@ -663,7 +663,7 @@
                         $cust = $this->db->query("select distinct a.aid,a.custName,a.town from abc a Left join customer h on (a.aid = h.aID) left join customer hh on (a.aid = hh.aID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->aid;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select>
@@ -691,7 +691,7 @@
                         $cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
                         foreach ($cust->result() as $row){
                             $cc = $row->gID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select>
@@ -720,7 +720,7 @@
                         
                         foreach ($cust->result() as $row){
                             $cc = $row->jID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
                         }
                     ?>
                 </select>
@@ -749,7 +749,7 @@
                         
                         foreach ($cust->result() as $row){
                             $cc = $row->nID;                         
-                            echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+                            echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
                         }
                     ?>
                 </select>
@@ -777,7 +777,7 @@
 						$cust = $this->db->query("select distinct a.eID,a.custName,a.town from emerchemie a Left join customer h on (a.eID = h.eID) left join customer hh on (a.eID = hh.eID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
 						foreach ($cust->result() as $row){
 							$cc = $row->eID;
-							echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 						}
 					?>
 				</select>
@@ -805,7 +805,7 @@
 						$cust = $this->db->query("select distinct a.bID,a.custName,a.town from baur a Left join customer h on (a.bID = h.bID) left join customer hh on (a.bID = hh.bID2) where h.Custid is null and hh.Custid is null and a.custName not like 'Dr%' order by a.custName");
 						foreach ($cust->result() as $row){
 							$cc = $row->bID;
-							echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+							echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 						}
 					?>
 				</select>
