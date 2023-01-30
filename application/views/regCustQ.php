@@ -219,30 +219,55 @@ switch($mid){
 		}
 		break;
 }   
-    //sanofi doesnt have id number
-    // if ($nid2!='NULL'){
-    //     $nid2 = "\"".$nid2."\"";
-    // }
-    // if ($nid!='NULL'){
-    //     $nid = "\"".$nid."\"";
-    // }
-	// if ($eid2!='NULL'){
-    //     $eid2 = "\"".$eid2."\"";
-    // }
-    // if ($eid!='NULL'){
-    //     $eid = "\"".$eid."\"";
-    // }
-	// if ($aid!='NULL'){
-	// 	$aid = "\"".$aid."\"";
-	// }
-	// if ($aid2!='NULL'){
-	// 	$aid2 = "\"".$aid2."\"";
-	// }
+    
+    if ($nid2!='NULL'){
+        $nid2 = "'".$nid2."'";
+    }
+    if ($nid!='NULL'){
+        $nid = "'".$nid."'";
+    }
+	if ($eid2!='NULL'){
+        $eid2 = "'".$eid2."'";
+    }
+    if ($eid!='NULL'){
+        $eid = "'".$eid."'";
+    }
+	if ($aid!='NULL'){
+		$aid = "'".$aid."'";
+	}
+	if ($aid2!='NULL'){
+		$aid2 = "'".$aid2."'";
+	}
+	if ($bid!='NULL'){
+		$bid = "'".$bid."'";
+	}
+	if ($bid2!='NULL'){
+		$bid2 = "'".$bid2."'";
+	}
+	if ($jid!='NULL'){
+		$jid = "'".$jid."'";
+	}
+	if ($jid2!='NULL'){
+		$jid2 = "'".$jid2."'";
+	}
+	if ($gid!='NULL'){
+		$gid = "'".$gid."'";
+	}
+	if ($gid2!='NULL'){
+		$gid2 = "'".$gid2."'";
+	}
+	if ($hid!='NULL'){
+		$hid = "'".$hid."'";
+	}
+	if ($hid2!='NULL'){
+		$hid2 = "'".$hid2."'";
+	}
+	
 	
     //
     
     $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,jID,nID,eID,aID,bID,hID2,gsID2,jID2,nID2,eID2,aID2,bID2) 
-			values('$custNm','$town2','$ty','$hid','$gid','$jid','$nid','$eid','$aid','$bid','$hid2','$gid2','$jid2','$nid2','$eid2','$aid2','$bid2')");
+			values('$custNm','$town2','$ty',$hid,$gid,$jid,$nid,$eid,$aid,$bid,$hid2,$gid2,$jid2,$nid2,$eid2,$aid2,$bid2)");
 	echo '
 			<div class="alert alert-success" role="alert">
 				Customer registration successful!
