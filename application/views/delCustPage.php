@@ -28,6 +28,9 @@
             <input class=" btn-danger" type="submit" value="delete">
         </form>
         </div>
+	</div>
+	</div>
+	<div class="mx-4">
 
 
         <div>
@@ -35,8 +38,8 @@
             <?php
                 $vcust = $this->db->query("select * from customer order by custName");
 				echo '<thead class="thead-dark">';
-                echo "<tr><strong><th>Customer ID</th><th>Name</th><th>Town</th><th>hemas</th><th>cipla</th><th>GS</th><th>JLM</th><th>Sanofi</th><th>Emerchemie</th>
-						<th>hemas-2</th><th>cipla-2</th><th>GS-2</th><th>JLM-2</th><th>Sanofi-2</th><th>Emerchemie-2</th></strong></tr>"; 
+                echo "<tr><strong><th>Customer ID</th><th>Name</th><th>Town</th><th>hemas</th><th>ABC</th><th>GS</th><th>JLM</th><th>NEO</th><th>Emerchemie</th><th>Baurs</th>
+						<th>hemas-2</th><th>ABC-2</th><th>GS-2</th><th>JLM-2</th><th>NEO-2</th><th>Emerchemie-2</th><th>Baurs-2</th></strong></tr>"; 
                 echo '</thead>';    
                 foreach($vcust->result() as $row1){
                     //echo "";
@@ -46,17 +49,19 @@
                         echo "<td>".$row1->custName . "</td>";
                         echo "<td>".$row1->town. "</td>";
                         echo "<td>".$row1->hID . "</td>";
-                        echo "<td>".$row1->cpID . "</td>";
+                        echo "<td>".$row1->aID . "</td>";
                         echo "<td>".$row1->gsID . "</td>";
                         echo "<td>".$row1->jID . "</td>";
-                        echo "<td>".$row1->sID . "</td>";
+                        echo "<td>".$row1->nID . "</td>";
 						echo "<td>".$row1->eID . "</td>";
+						echo "<td>".$row1->bID . "</td>";
                         echo "<td>".$row1->hID2 . "</td>";
-                        echo "<td>".$row1->cpID2 . "</td>";
+                        echo "<td>".$row1->aID2 . "</td>";
                         echo "<td>".$row1->gsID2 . "</td>";
                         echo "<td>".$row1->jID2 . "</td>";
-                        echo "<td>".$row1->sID2 . "</td>";
+                        echo "<td>".$row1->nID2 . "</td>";
 						echo "<td>".$row1->eID2 . "</td>";
+						echo "<td>".$row1->bID2 . "</td>";
                         echo "</tr>";
             
                     //}
