@@ -66,7 +66,7 @@
 											$cust = $this->db->query("select distinct a.hID,a.custName,a.town from hemas a Left join customer h on (a.hID = h.hID) left join customer hh on (a.hID = hh.hID2) where h.Custid is null and hh.Custid is null and a.custName not like '%Dr.' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->hID;
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select> 
@@ -78,7 +78,7 @@
 											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->aID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 											}
 										?>
 									</select>
@@ -90,7 +90,7 @@
 											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->gID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>
@@ -105,7 +105,7 @@
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->jID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>
@@ -117,7 +117,7 @@
 											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->nID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 											}
 										?>
 									</select>
@@ -146,7 +146,7 @@
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->bID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>
@@ -171,7 +171,7 @@
 											//$cust = $this->db->query("select distinct a.hID,a.hCustName,a.hTown from hemasoutupload a");
 											foreach ($cust->result() as $row){
 												$cc = $row->hID;
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>  
@@ -183,7 +183,7 @@
 											$cust = $this->db->query("select distinct a.aID,a.custName,a.town from abc a Left join customer h on (a.aID = h.aID) left join customer hh on (a.aID = hh.aID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->aID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 											}
 										?>
 									</select>
@@ -195,7 +195,7 @@
 											$cust = $this->db->query("select distinct a.gID,a.custName,a.town from gs a Left join customer h on (a.gID = h.gsID) left join customer hh on (a.gID = hh.gsID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->gID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>
@@ -210,7 +210,7 @@
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->jID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>
@@ -222,7 +222,7 @@
 											$cust = $this->db->query("select distinct a.nID,a.custName,a.town from neo a Left join customer h on (a.nID = h.nID) left join customer hh on (a.nID = hh.nID2) where h.Custid is null and hh.Custid is null and a.town not like 'Put%' and a.town not like 'KUL%' and a.town not like 'WEN%' and a.town not like 'MAR%' and a.town not like 'CHI%' and a.custName not like 'Dr%' order by a.custName");
 											foreach ($cust->result() as $row){
 												$cc = $row->nID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ."</option>";
 											}
 										?>
 									</select>
@@ -251,7 +251,7 @@
 											
 											foreach ($cust->result() as $row){
 												$cc = $row->bID;                         
-												echo "<option value=\"'" . $cc . "'\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
+												echo "<option value=\"" . $cc . "\">" . $row->custName." - ". $row->town ." - ".$cc."</option>";
 											}
 										?>
 									</select>

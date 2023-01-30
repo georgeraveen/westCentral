@@ -101,7 +101,7 @@ if($jid2!='NULL'){
 switch($mid){
     case "hemas":
         $mid = $hid;
-        $custdetail = $this->db->query("select distinct hID, custName, town from hemas where hID = $hid");
+        $custdetail = $this->db->query("select distinct hID, custName, town from hemas where hID = '$hid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -109,7 +109,7 @@ switch($mid){
         break;
     case "abc":
         $mid = $aid;
-        $custdetail = $this->db->query("select distinct aid, custName, town from abc where aid = $aid");
+        $custdetail = $this->db->query("select distinct aid, custName, town from abc where aid = '$aid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -117,7 +117,7 @@ switch($mid){
         break;
     case "gs":
         $mid = $gid;
-        $custdetail = $this->db->query("select distinct gID, custName, town from gs where gID = $gid");
+        $custdetail = $this->db->query("select distinct gID, custName, town from gs where gID = '$gid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -125,7 +125,7 @@ switch($mid){
         break;
     case "jl":
         $mid = $jid;
-        $custdetail = $this->db->query("select distinct jID, custName, town from jlm where jID = $jid");
+        $custdetail = $this->db->query("select distinct jID, custName, town from jlm where jID = '$jid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -133,7 +133,7 @@ switch($mid){
         break;
     case "neo":
         $mid = $nid;
-        $custdetail = $this->db->query("select distinct nid, custName, town from neo where nid = \"$nid\"");
+        $custdetail = $this->db->query("select distinct nid, custName, town from neo where nid = '$nid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -142,7 +142,7 @@ switch($mid){
 
 	case "emchemie":
 		$mid = $eid;
-        $custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = \"$eid\"");
+        $custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = '$eid'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -151,7 +151,7 @@ switch($mid){
     
 	case "baur":
 		$mid = $bid;
-		$custdetail = $this->db->query("select distinct bID, custName, town from baur where bID = \"$bid\"");
+		$custdetail = $this->db->query("select distinct bID, custName, town from baur where bID = '$bid'");
 		foreach ($custdetail->result() as $row){
 			$custNm = $row->custName;
 			$custTw = $row->town;
@@ -160,7 +160,7 @@ switch($mid){
 
     case "hemas2":
         $mid = $hid2;
-        $custdetail = $this->db->query("select distinct hID, custName, town from hemas where hID = $hid2");
+        $custdetail = $this->db->query("select distinct hID, custName, town from hemas where hID = '$hid2'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -168,7 +168,7 @@ switch($mid){
         break;
     case "abc2":
         $mid = $aid2;
-        $custdetail = $this->db->query("select distinct aid, custName, town from abc where aid = $aid2");
+        $custdetail = $this->db->query("select distinct aid, custName, town from abc where aid = '$aid2'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -176,7 +176,7 @@ switch($mid){
         break;
     case "gs2":
         $mid = $gid2;
-        $custdetail = $this->db->query("select distinct gID, custName, town from gs where gID = $gid2");
+        $custdetail = $this->db->query("select distinct gID, custName, town from gs where gID = '$gid2'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -185,7 +185,7 @@ switch($mid){
     
     case "jl2":
         $mid = $jid2;
-        $custdetail = $this->db->query("select distinct jID, custName, town from jlm where jID = $jid2");
+        $custdetail = $this->db->query("select distinct jID, custName, town from jlm where jID = '$jid2'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -194,7 +194,7 @@ switch($mid){
     
     case "neo2":
         $mid = $nid2;
-        $custdetail = $this->db->query("select distinct nid, custName, town from neo where nid = \"$nid2\"");
+        $custdetail = $this->db->query("select distinct nid, custName, town from neo where nid = '$nid2'");
         foreach ($custdetail->result() as $row){
             $custNm = $row->custName;
             $custTw = $row->town;
@@ -203,7 +203,7 @@ switch($mid){
 
 	case "emchemie2":
 		$mid = $eid2;
-		$custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = \"$eid2\"");
+		$custdetail = $this->db->query("select distinct eID, custName, town from emchemie where eID = '$eid2'");
 		foreach ($custdetail->result() as $row){
 			$custNm = $row->custName;
 			$custTw = $row->town;
@@ -212,7 +212,7 @@ switch($mid){
 	
 	case "baur2":
 		$mid = $bid2;
-		$custdetail = $this->db->query("select distinct bID, custName, town from baur where bID = \"$bid2\"");
+		$custdetail = $this->db->query("select distinct bID, custName, town from baur where bID = '$bid2'");
 		foreach ($custdetail->result() as $row){
 			$custNm = $row->custName;
 			$custTw = $row->town;
@@ -220,28 +220,29 @@ switch($mid){
 		break;
 }   
     //sanofi doesnt have id number
-    if ($nid2!='NULL'){
-        $nid2 = "\"".$nid2."\"";
-    }
-    if ($nid!='NULL'){
-        $nid = "\"".$nid."\"";
-    }
-	if ($eid2!='NULL'){
-        $eid2 = "\"".$eid2."\"";
-    }
-    if ($eid!='NULL'){
-        $eid = "\"".$eid."\"";
-    }
-	if ($aid!='NULL'){
-		$aid = "\"".$aid."\"";
-	}
-	if ($aid2!='NULL'){
-		$aid2 = "\"".$aid2."\"";
-	}
+    // if ($nid2!='NULL'){
+    //     $nid2 = "\"".$nid2."\"";
+    // }
+    // if ($nid!='NULL'){
+    //     $nid = "\"".$nid."\"";
+    // }
+	// if ($eid2!='NULL'){
+    //     $eid2 = "\"".$eid2."\"";
+    // }
+    // if ($eid!='NULL'){
+    //     $eid = "\"".$eid."\"";
+    // }
+	// if ($aid!='NULL'){
+	// 	$aid = "\"".$aid."\"";
+	// }
+	// if ($aid2!='NULL'){
+	// 	$aid2 = "\"".$aid2."\"";
+	// }
 	
     //
     
-    $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,jID,nID,eID,aID,bID,hID2,gsID2,jID2,nID2,eID2,aID2,bID2) values('$custNm','$town2','$ty',$hid,$gid,$jid,$nid,$eid,$aid,$bid,$hid2,$gid2,$jid2,$nid2,$eid2,$aid2,$bid2)");
+    $cust = $this->db->query("insert into customer(custName,town,type,hID,gsID,jID,nID,eID,aID,bID,hID2,gsID2,jID2,nID2,eID2,aID2,bID2) 
+			values('$custNm','$town2','$ty','$hid','$gid','$jid','$nid','$eid','$aid','$bid','$hid2','$gid2','$jid2','$nid2','$eid2','$aid2','$bid2')");
 	echo '
 			<div class="alert alert-success" role="alert">
 				Customer registration successful!
