@@ -171,7 +171,7 @@
 						<select name="mArea[]" multiple id="mArea" size="8">
 						<?php
 							require 'areas.php';
-							echo "<option value=NULL>select the town</option>";
+							echo "<option value=NULL>select the areas</option>";
 							foreach($areaTowns as $key => $value){
 								echo "<option value=\"'".implode("'.'",$value). "'\">" .$key. "</option>";
 							}
