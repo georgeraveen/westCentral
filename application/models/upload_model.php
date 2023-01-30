@@ -52,7 +52,7 @@ class upload_model extends CI_Model{
 	function upload_abc_out(){
         if(file_exists( './upload/csv/gvOutstadingABC.csv')){
             $this->db->query("delete from abcoutupload");
-            return $this->db->query("LOAD DATA LOCAL INFILE 'http://localhost/westCentral/upload/csv/gvOutstadingABC.csv' INTO TABLE abcoutupload FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (inv,@date,@CustName,age,amount,@d,@d,@d,balamount) SET date = STR_TO_DATE(@date,'%d-%b-%Y') , aID= REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \"), aCustName=REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \")");
+            return $this->db->query("LOAD DATA LOCAL INFILE 'http://localhost/westCentral/upload/csv/gvOutstadingABC.csv' INTO TABLE abcoutupload FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (inv,@date,@CustName,age,amount,@d,@d,@d,balamount) SET date = STR_TO_DATE(@date,'%d/%b/%Y') , aID= REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \"), aCustName=REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \")");
         }
         else{
             throw new Exception("File not found", 1);

@@ -1,5 +1,8 @@
 <!DOCTYPE HTML>
 <html>
+	<?php
+		require 'areas.php';
+	?>
     <head>
         <title>The West Central Pharma</title>
         <link href="../upload/css/style.css" rel="stylesheet" type="text/css"  media="all" />
@@ -291,14 +294,11 @@
 									<option value="d">Doctor</option>
 								</select>
 								<select name="cTown" class="mx-3">
-										<option value="Negombo">Negombo</option><option value="Katana">Katana</option><option value="Kochikade">Kochchikade</option><option value="Raddolugama">Raddolugama</option>
-										<option value="Katunayake">Katunayake</option><option value="Seeduwa">Seeduwa</option><option value="Averiwatta">Averiwatta</option><option value="Bopitiya">Bopitiya</option>
-										<option value="Ja-Ela">Ja-Ela</option><option value="Kapuwatte">Kapuwatte</option><option value="Ekala">Ekala</option><option value="Pamunugama">Pamunugama</option>
-										<option value="Kandana">Kandana</option><option value="Enderamulla">Enderamulla</option><option value="Hunupitiya">Hunupitiya</option>
-										<option value="Hendala">Hendala</option><option value="Ragama">Ragama</option><option value="Welisara">Welisara</option>
-										<option value="Elakande">Elakande</option><option value="Mabole">Mabole</option><option value="Mahabage">Mahabage</option>
-										<option value="Wattala">Wattala</option><option value="Peliyagoda">Peliyagoda</option>
-										<option value="Divulapitiya">Divulapitiya</option><option value="Minuwangoda">Minuwangoda</option>
+									<?php
+										foreach($towns as $town){
+											echo "<option value=\"".$town."\">".$town."</option>";
+										}
+									?>
 								</select>
 								<input type="submit" value="Register"class="btn btn-warning" class="mx-3">
 							</div>

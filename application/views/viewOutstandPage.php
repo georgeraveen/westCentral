@@ -157,6 +157,44 @@
 				</div>
 				</div>
 			</div>
+			<div class="card">
+				<div class="card-header" id="headingFive">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+					Area Wise
+					</button>
+				</h5>
+				</div>
+				<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+				<div class="card-body">
+					<form action ="./viewOutstand/multiTwOutQ" target="popup" method="post">
+						<select name="mArea[]" multiple id="mArea" size="8">
+						<?php
+							require 'areas.php';
+							echo "<option value=NULL>select the town</option>";
+							foreach($areaTowns as $key => $value){
+								echo "<option value=\"'".implode("'.'",$value). "'\">" .$key. "</option>";
+							}
+						?>  
+						</select>
+						Age: <input type="text" name="age" value=0>
+						<select name="ctype">
+							<option value="p">Pharmacy</option>
+							<option value="d">Doctor</option>
+						</select>
+						<script>
+						$('#mArea').multiselect({
+							columns: 1,
+							placeholder: 'Select areas',
+							search: true,
+							selectAll: true
+						});
+						</script>
+						<input type="submit" class="btn btn-success" value="View Outstanding">
+					</form>
+				</div>
+				</div>
+			</div>
 		</div>
 	</div>
     </body>
