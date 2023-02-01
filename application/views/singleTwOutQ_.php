@@ -107,7 +107,7 @@
                 if($row->gsID!=''){
                     $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID'");
                     foreach($cust2->result() as $row2){
-                        echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        echo "<tr><th id=\"tr2\" colspan = \"5\">(George Steuart) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
                     }
                     //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
                     $cust2 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID'and age>=$ageOut order by date");
@@ -184,7 +184,7 @@
                 if($row->gsID2!=''){
                     $cust2 = $this->db->query("select gID,custName,town from gs where gID='$row->gsID2'");
                     foreach($cust2->result() as $row2){
-                        echo "<tr><th id=\"tr2\" colspan = \"5\">(George Stuwert) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
+                        echo "<tr><th id=\"tr2\" colspan = \"5\">(George Steuart) - ".$row2->gID."--".$row2->custName."--".$row2->town."</th></tr>";
                     }
                     //echo "<tr><th>Invoice No</th><th>Date</th><th>Age</th><th>Amount</th><th>Outstanding Amount</th></tr>";
                     $cust2 = $this->db->query("select inv,date,age,amount,balAmount from gsoutupload where gID='$row->gsID2'and age>=$ageOut order by date");
