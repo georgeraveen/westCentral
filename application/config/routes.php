@@ -86,3 +86,15 @@ $route['cleanNeoCust'] = 'cleanCustomer/cleanNeoCust';
 $route['cleanBaurCust'] = 'cleanCustomer/cleanBaurCust';
 $route['cleanEmCust'] = 'cleanCustomer/cleanEmCust';
 //
+
+//
+$route['cleanHemasOutstand'] = 'cleanOutstand/cleanHemasOutstand';
+$route['cleanCiplaOutstand'] = 'cleanOutstand/cleanCiplaOutstand';
+$route['cleanGsOutstand'] = 'cleanOutstand/cleanGSOutstand';
+$route['cleanJlmOutstand'] = 'cleanOutstand/cleanJLMOutstand';
+$route['cleanSanOutstand'] = 'cleanOutstand/cleanSanOutstand';
+$route['cleanAbcOutstand'] = 'cleanOutstand/cleanABCOutstand';
+$route['cleanNeoOutstand'] = 'cleanOutstand/cleanNEOOutstand';
+$route['cleanBaurOutstand'] = 'cleanOutstand/cleanBAUROutstand';
+$route['cleanEmOutstand'] = 'cleanOutstand/cleanEMEROutstand';
+//
