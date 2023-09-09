@@ -6,7 +6,7 @@ class upload_model extends CI_Model{
     function upload_hemas_out(){
 		if(file_exists( './upload/csv/gvOutstadinghemas.csv')){
 			$this->db->query("delete from hemasoutupload");
-			return $this->db->query("LOAD DATA LOCAL INFILE 'http://localhost/westCentral/upload/csv/gvOutstadinghemas.csv' INTO TABLE hemasoutupload FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (hID,@CustName,hTown,@d,inv,@date,age,amount,balAmount) SET date = STR_TO_DATE(@date,'%m/%d/%Y'), hCustName=REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \")");
+			return $this->db->query("LOAD DATA LOCAL INFILE 'http://localhost/westCentral/upload/csv/gvOutstadinghemas.csv' INTO TABLE hemasoutupload FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (@hIDd,@CustName,hTown,@date,inv,amount,age,balAmount) SET hID = SUBSTRING_INDEX(@hIDd,'_',1) , date = STR_TO_DATE(SUBSTRING_INDEX(@date,' ',1),'%d/%m/%Y'), hCustName=REPLACE (REPLACE (REPLACE(@CustName,'\"',\" \"),\"'\",\" \"),\"`\",\" \")");
 		}
 		else{
 			throw new Exception("File not found", 1);
