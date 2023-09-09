@@ -89,6 +89,33 @@
 					</div>
 
             	</div>
+				<hr class="mt-5" >
+				<h3 class="mt-5">Clean Database</h3>
+				<div class="row mt-4" >
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./cleanCustPage" target="_blank" >
+								<button type="button" class="btn btn-danger btn-lg btn-block" >Clean Customers</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div>
+							<!-- <img src="../upload/images/doctor.png"> -->
+						</div>
+						<div>
+							<div><span><a href="./cleanOutstandPage" target="_blank" >
+								<button type="button" class="btn btn-warning btn-lg btn-block" >Clean Outstanding</button>
+								</a></span>
+							</div>
+						</div>
+					</div>
+
+				</div>
             </div>
         </div>
             

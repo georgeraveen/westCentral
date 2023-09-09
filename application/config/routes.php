@@ -59,6 +59,8 @@ $route['regCustPage'] = 'regCustomer';
 $route['viewOutstandPage'] = 'viewOutstand';
 $route['delCustPage'] = 'delCustomer';
 $route['CustPage'] = 'detCustomer';
+$route['cleanCustPage'] = 'cleanCustomer';
+$route['cleanOutstandPage'] = 'cleanOutstand';
 
 
 //
@@ -71,4 +73,16 @@ $route['uploadAbcOut'] = 'uploadData/uploadAbcOut';
 $route['uploadNeoOut'] = 'uploadData/uploadNeoOut';
 $route['uploadBaurOut'] = 'uploadData/uploadBaurOut';
 $route['uploadEmOut'] = 'uploadData/uploadEmOut';
+//
+
+//
+$route['cleanHemasCust'] = 'cleanCustomer/cleanHemasCust';
+$route['cleanCiplaCust'] = 'cleanCustomer/cleanCiplaCust';
+$route['cleanGsCust'] = 'cleanCustomer/cleanGsCust';
+$route['cleanJlmCust'] = 'cleanCustomer/cleanJlmCust';
+$route['cleanSanCust'] = 'cleanCustomer/cleanSanCust';
+$route['cleanAbcCust'] = 'cleanCustomer/cleanAbcCust';
+$route['cleanNeoCust'] = 'cleanCustomer/cleanNeoCust';
+$route['cleanBaurCust'] = 'cleanCustomer/cleanBaurCust';
+$route['cleanEmCust'] = 'cleanCustomer/cleanEmCust';
 //
